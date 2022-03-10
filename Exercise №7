@@ -1,0 +1,61 @@
+using System;
+
+namespace MyApp
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.SetWindowSize(200, 40);
+            float playerMoneys = Single.NaN;
+            float crystalPrice = 35f;
+            float playerCrystals = Single.NaN;
+
+            Console.WriteLine("Вы заходите в обветшалую лавку. \nВас встречает низкий бородатый гоблин, стоящий за стойкой.");
+            Console.WriteLine("Раздаётся мерзкий и скрипучий голос: «Что стоишь в дверях?! Давай уже сюда свои золотые, знаю я зачем ты пришёл.» \n«Один кристалл стоит {0} золотых. Покупай или проваливай!»", crystalPrice);
+
+            bool isNumber;
+            do
+            {
+                isNumber = true;
+                try
+                {
+                    Console.WriteLine("«Сколько денег-то с собой имеешь?» ");
+                    playerMoneys = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("«Что ты несёшь? Чисел что ли не знаешь? Нормально ответь!»");
+                    isNumber = false;
+                }
+            } while (isNumber == false);
+
+            Console.WriteLine("«Ладно, так уж и быть. За эти деньги ты можешь купить {0} кристаллов. Сколько брать будешь?»", Math.Floor(playerMoneys / crystalPrice));
+
+            do
+            {
+                isNumber = true;
+                try
+                {
+                    Console.WriteLine("Сколько кристаллов вы хотите купить?");
+                    playerCrystals = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Попробуйте ещё раз, только используя числа");
+                    isNumber = false;
+                }
+            } while (isNumber == false);
+
+            Console.WriteLine("Гоблин, пересчитывая монеты: «Ну, давай, путешественник. Желаю не сдохнуть! хехехе» \nВы покидаете лавку");
+
+            playerMoneys -= playerCrystals * crystalPrice;
+
+            Console.WriteLine("Ваш баланс на данный момент: \nКристаллы: {0}     Золотые монеты: {1}", playerCrystals, playerMoneys);
+            if (playerMoneys < 0)
+            {
+                Console.WriteLine("Поздравляем! Теперь вы в долгах)");
+            }
+        }
+    }
+}
