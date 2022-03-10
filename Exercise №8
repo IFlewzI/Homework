@@ -11,6 +11,8 @@ namespace MyApp
             Console.WriteLine("Появившийся из ниоткуда за вашей спиной демон кричит вам в ухо: <<СМЕРТНЫЙ, ЗА КАЖДУЮ МИНУТУ ОЖИДАНИЯ ЗДЕСЬ ТЫ БУДЕШЬ ГОРЕТЬ В КОТЛЕ НА МИНУТУ МЕНЬШЕ!>>");
             float grannysNumber = Single.NaN;
             float receptionTime = 10f;
+            float hourDuration = 60f;
+            float leftToWait;
 
             bool isNumber;
             do
@@ -27,10 +29,11 @@ namespace MyApp
                     isNumber = false;
                 }
             } while (isNumber == false);
+            leftToWait = (grannysNumber * receptionTime) / hourDuration;
             Console.WriteLine("Вы осматриваете очередь и видите {0} демонов, замаскированных под милых старушек", grannysNumber);
 
             Console.WriteLine("<<А ТЕПЕРЬ, СМЕРТНЫЙ, ВОЗЬМИ ТАЛОН И ОЖИДАЙ СВОЕЙ ОЧЕРЕДИ!!!>>");
-            Console.WriteLine("Вы берёте талон. Надпись на нём говорит, что вам осталось ждать {0} часов", (grannysNumber * receptionTime) / 60);
+            Console.WriteLine("Вы берёте талон. Надпись на нём говорит, что вам осталось ждать {0} часов", leftToWait);
             Console.WriteLine("Удачного ожидания!)");
         }
     }
