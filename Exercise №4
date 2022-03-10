@@ -6,7 +6,6 @@ namespace MyApp
     {
         static void Main()
         {
-        // Задание номер 4
 
             Console.WriteLine("Введите своё имя: ");
             userName = Console.ReadLine();
