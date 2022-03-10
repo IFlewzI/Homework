@@ -1,0 +1,37 @@
+using System;
+
+namespace MyApp
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.SetWindowSize(200, 40);
+            Console.WriteLine("Ваше путешествие привело вас на 4-ый круг ада... Перед вами... ГОСУДАРСТВЕННАЯ ПОЛИКЛИНИКА!!!");
+            Console.WriteLine("Появившийся из ниоткуда за вашей спиной демон кричит вам в ухо: <<СМЕРТНЫЙ, ЗА КАЖДУЮ МИНУТУ ОЖИДАНИЯ ЗДЕСЬ ТЫ БУДЕШЬ ГОРЕТЬ В КОТЛЕ НА МИНУТУ МЕНЬШЕ!>>");
+            float grannysNumber = Single.NaN;
+            float receptionTime = 10f;
+
+            bool isNumber;
+            do
+            {
+                isNumber = true;
+                try
+                {
+                    Console.WriteLine("<<ИТАК, СКОЛЬКО СТАРУШЕК МНЕ СЮДА ПРИЗВАТЬ?!?!?!?>>");
+                    grannysNumber = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("<<СМЕРТНЫЙ, ТЫ ПЫТАЕШЬСЯ МЕНЯ НАДУРИТЬ?!?!?!?! НАЗОВИ ЧИСЛО!!!!!>>");
+                    isNumber = false;
+                }
+            } while (isNumber == false);
+            Console.WriteLine("Вы осматриваете очередь и видите {0} демонов, замаскированных под милых старушек", grannysNumber);
+
+            Console.WriteLine("<<А ТЕПЕРЬ, СМЕРТНЫЙ, ВОЗЬМИ ТАЛОН И ОЖИДАЙ СВОЕЙ ОЧЕРЕДИ!!!>>");
+            Console.WriteLine("Вы берёте талон. Надпись на нём говорит, что вам осталось ждать {0} часов", (grannysNumber * receptionTime) / 60);
+            Console.WriteLine("Удачного ожидания!)");
+        }
+    }
+}
