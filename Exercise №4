@@ -1,0 +1,43 @@
+using System;
+
+namespace MyApp
+{
+    class Program
+    {
+        static void Main()
+        {
+        // Задание номер 4
+
+            Console.WriteLine("Введите своё имя: ");
+            userName = Console.ReadLine();
+
+            float userAge = Single.NaN;
+            // Инициализация переменной не числом в качестве костыля, иначе код будет давать ошибку далее
+
+            // Приём данных из консоли с защитой от ошибки
+            bool isNumber;
+            do
+            {
+                isNumber = true;
+                try
+                {
+                    Console.WriteLine("Введите свой возраст: ");
+                    userAge = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Попробуйте ещё раз, используя целые числа");
+                    isNumber = false;
+                }
+            } while (isNumber == false);
+
+            Console.WriteLine("Какой ваш любимый жанр игр? ");
+            string favoritegGenre = Console.ReadLine();
+
+            Console.WriteLine("А какая ваша любимая игра? ");
+            string favoriteGame = Console.ReadLine();
+
+            Console.WriteLine("Вас зовут {0}, вам {1} лет. Ваш любимый жанр игр - это {2}, а любимая игра - это {3}. Приятно познакомиться!", userName, userAge, favoritegGenre, favoriteGame);
+        }
+    }
+}
