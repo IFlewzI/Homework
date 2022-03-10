@@ -1,0 +1,26 @@
+using System;
+
+namespace MyApp
+{
+    class Program
+    {
+        static void Main()
+        {
+            float appleNumber = 15f;
+            float applePrice = 5f;
+
+            void swapNumbers()
+            {
+                float buffer = appleNumber;
+                appleNumber = applePrice;
+                applePrice = buffer;
+            }
+
+            Console.WriteLine("Вы купили {0} яблок, каждое по {1} рублей. Вам надо заплатить {2} рублей.", appleNumber, applePrice, applePrice * appleNumber);
+            Console.WriteLine("Ой, извините, неправильно, сейчас пересчитаю");
+            swapNumbers();
+            Console.WriteLine("Вы купили {0} яблок, каждое по {1} рублей. Вам надо заплатить {2} рублей.", appleNumber, applePrice, applePrice * appleNumber);
+            Console.WriteLine("Теперь верно)");
+        }
+    }
+}
