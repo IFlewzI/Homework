@@ -8,18 +8,19 @@ namespace MyApp
         {
             float appleNumber = 15f;
             float applePrice = 5f;
+            float totalPay = appleNumber * applePrice;
 
-            void swapNumbers()
+            void SwapNumbers()
             {
                 float buffer = appleNumber;
                 appleNumber = applePrice;
                 applePrice = buffer;
             }
 
-            Console.WriteLine("Вы купили {0} яблок, каждое по {1} рублей. Вам надо заплатить {2} рублей.", appleNumber, applePrice, applePrice * appleNumber);
+            Console.WriteLine("Вы купили {0} яблок, каждое по {1} рублей. Вам надо заплатить {2} рублей.", appleNumber, applePrice, totalPay);
             Console.WriteLine("Ой, извините, неправильно, сейчас пересчитаю");
-            swapNumbers();
-            Console.WriteLine("Вы купили {0} яблок, каждое по {1} рублей. Вам надо заплатить {2} рублей.", appleNumber, applePrice, applePrice * appleNumber);
+            SwapNumbers();
+            Console.WriteLine("Вы купили {0} яблок, каждое по {1} рублей. Вам надо заплатить {2} рублей.", appleNumber, applePrice, totalPay);
             Console.WriteLine("Теперь верно)");
         }
     }
