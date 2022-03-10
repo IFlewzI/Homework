@@ -6,16 +6,19 @@ namespace MyApp
     {
         static void Main()
         {
-            int picturesNumber = 51;
-            int rowSize = 5;
+            int picturesNumber = 52;
+            int picturesLeft;
+            int rowSize = 3;
+            int rowNumber = 0;
             for (int i = 1; i < picturesNumber + 1; i++)
             {
-                Console.Write("[] ");
                 if (i % rowSize == 0)
                 {
-                    Console.WriteLine();
+                    rowNumber++;
                 }
-
+            }
+            picturesLeft = picturesNumber - rowNumber * rowSize;
+            Console.WriteLine("Рядов с картинками: {0} \nОсталось картинок: {1}", rowNumber, picturesLeft);
             }
         }
     }
