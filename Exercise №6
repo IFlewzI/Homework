@@ -7,17 +7,9 @@ namespace MyApp
         static void Main()
         {
             int picturesNumber = 52;
-            int picturesLeft;
             int rowSize = 3;
-            int rowNumber = 0;
-            for (int i = 1; i < picturesNumber + 1; i++)
-            {
-                if (i % rowSize == 0)
-                {
-                    rowNumber++;
-                }
-            }
-            picturesLeft = picturesNumber - rowNumber * rowSize;
+            int rowNumber = 52 / 3;
+            int picturesLeft = picturesNumber - rowNumber * rowSize;
             Console.WriteLine("Рядов с картинками: {0} \nОсталось картинок: {1}", rowNumber, picturesLeft);
             }
         }
