@@ -7,9 +7,10 @@ namespace MyApp
         static void Main()
         {
             Console.SetWindowSize(200, 40);
-            float playerMoneys = Single.NaN;
-            float crystalPrice = 35f;
-            float playerCrystals = Single.NaN;
+            double playerMoneys = Double.NaN;
+            double crystalPrice = 35d;
+            double playerCrystals = Double.NaN;
+            double possibleCrystals;
 
             Console.WriteLine("Вы заходите в обветшалую лавку. \nВас встречает низкий бородатый гоблин, стоящий за стойкой.");
             Console.WriteLine("Раздаётся мерзкий и скрипучий голос: «Что стоишь в дверях?! Давай уже сюда свои золотые, знаю я зачем ты пришёл.» \n«Один кристалл стоит {0} золотых. Покупай или проваливай!»", crystalPrice);
@@ -30,7 +31,8 @@ namespace MyApp
                 }
             } while (isNumber == false);
 
-            Console.WriteLine("«Ладно, так уж и быть. За эти деньги ты можешь купить {0} кристаллов. Сколько брать будешь?»", Math.Floor(playerMoneys / crystalPrice));
+            possibleCrystals = Math.Floor(playerMoneys / crystalPrice);
+            Console.WriteLine("«Ладно, так уж и быть. За эти деньги ты можешь купить {0} кристаллов. Сколько брать будешь?»", possibleCrystals);
 
             do
             {
