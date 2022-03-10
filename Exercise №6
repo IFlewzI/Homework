@@ -1,0 +1,22 @@
+using System;
+
+namespace MyApp
+{
+    class Program
+    {
+        static void Main()
+        {
+            int picturesNumber = 51;
+            int rowSize = 5;
+            for (int i = 1; i < picturesNumber + 1; i++)
+            {
+                Console.Write("[] ");
+                if (i % rowSize == 0)
+                {
+                    Console.WriteLine();
+                }
+
+            }
+        }
+    }
+}
