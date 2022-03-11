@@ -8,7 +8,7 @@ namespace MyApp
         {
             int picturesNumber = 52;
             int rowSize = 3;
-            int rowNumber = 52 / 3;
+            int filledRows = picturesNumber / rowSize;
             int picturesLeft = picturesNumber % rowNumber;
             Console.WriteLine("Рядов с картинками: {0} \nОсталось картинок: {1}", rowNumber, picturesLeft);
             }
