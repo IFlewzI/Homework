@@ -11,7 +11,6 @@ namespace MyApp
             int filledRows = picturesNumber / rowSize;
             int picturesLeft = picturesNumber % rowNumber;
             Console.WriteLine("Рядов с картинками: {0} \nОсталось картинок: {1}", rowNumber, picturesLeft);
-            }
         }
     }
 }
